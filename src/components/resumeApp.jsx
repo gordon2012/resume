@@ -6,9 +6,9 @@ export default class ResumeApp extends Component
 	render() {
 		return (
 			<div>
-				<h1>Hello React!</h1>
+				<h1>Resume Builder</h1>
 				<p>THIS IS REDUX!!!!</p>
-				
+
 			</div>
 		);
 	}
