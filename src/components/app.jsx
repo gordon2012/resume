@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
-import { createStore } from 'redux';
 // const reducer = combineReducers(reducers);
 // const store = createStore(reducer);
 // const store = createStore(friendlist);
-const store = createStore(function(){return [];});
 
+
+import { createStore } from 'redux';
+import todos from '../reducers/todos';
+const store = createStore(todos);
+
+
+import Todos from './todos'
 import ResumeApp from './resumeApp.jsx'
 
 export default class App extends Component {
@@ -14,7 +19,7 @@ export default class App extends Component {
     return (
 			<div>
 				<Provider store={store}>
-						<ResumeApp />
+						<Todos />
 				</Provider>
 			</div>
     );
