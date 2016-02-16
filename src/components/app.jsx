@@ -1,22 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
-// const reducer = combineReducers(reducers);
-// const store = createStore(reducer);
-// const store = createStore(friendlist);
-
-import DevTools from './devTools';
-import Immutable from 'immutable';
-const initialState = Immutable.List(['Always Be Coding']);
-// export default (state = Immutable.List(['Always Be Coding']), action) => {
-import { createStore } from 'redux';
-import todos from '../reducers/todos';
-const store = createStore(todos, initialState, DevTools.instrument());
-
-
+import store from '../store'
 
 import Todos from './todos'
-import ResumeApp from './resumeApp.jsx'
+import DevTools from './devTools';
 
 export default class App extends Component {
 	render() {
@@ -24,7 +12,7 @@ export default class App extends Component {
 			<Provider store={store}>
 				<div>
 					<Todos />
-          <DevTools />
+					<DevTools />
 				</div>
 			</Provider>
 		);
